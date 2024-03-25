@@ -22,9 +22,10 @@ Package Contents:
 
 1.Product Backlog:
 
-Includes all user stories with their priority level and required tasks
-Estimated and actual effort values for each completed story/task
-A team velocity diagram illustrating the progress in this iteration
+User Stories: Contains all user stories and their priority level
+Task Breakdown: Specific tasks required for each user story.
+Effort Estimation: Estimated and actual effort values are provided for each completed story/task
+Team Velocity Diagram: A visual representation of the team's velocity, showing the amount of work completed in this iteration compared to previous iterations.
 
 2.Revised Estimates:
 
@@ -32,10 +33,11 @@ Updated time estimates for the remaining stories/tasks for iteration 3 based on 
 
 3.Test Plan for Iteration 3:
 
+Describes the testing approach for the final iteration, ensuring thorough coverage of all features.
 Detailed test plan outlining:
-  Test conditions.
-  Test inputs.
-  Expected outputs.
+  Test conditions: Specific conditions under which each test will be conducted.
+  Test inputs: Detailed inputs to be used for each test case.
+  Expected outputs: Defined expected outcomes for each test to help with easy identification of discrepancies during testing.
 -This plan is pivotal for ensuring the quality and robustness of the final iteration.
 
 4.ReadMe File:
