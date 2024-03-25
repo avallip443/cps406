@@ -1,10 +1,16 @@
 # Bug Report System (BRS) 
 Team Contributors :
+
 Parnia Zare
+
 Carole Youssef
+
 Arathi Vallipuranathan
+
 Micah Pascua
+
 Lingyun Du
+
 
 Overview:
 
