@@ -5,11 +5,13 @@
 - [Package Contents](#package-contents)
 - [Contributors](#contributors)
 
+
 ## Overview
 
 This program, the Bug Report System (BRS), is designed to facilitate the input of bugs and errors into a database, offering users a straightforward and user-friendly script for seamless implementation. A stable internet connection and specific network capabilities are required for optimal functionality of the web form. Users can initiate new bug reports and close them as needed, with email notifications provided at each stage of the bug repair process. Access to the bug report form requires logging in with a valid username and password. Additionally, a graphical representation of past bug occurrences and their frequency will be available. Upon bug resolution, notifications will be sent via email to the reporting developer and any other involved parties.
 
 This package encapsulates the key components of the second iteration of the BRS development cycle, including a Product Backlog, a Test Plan, and a Team Velocity.
+
 
 ## Package Contents:
 
@@ -65,6 +67,18 @@ This section contains:
 - **Purpose Clarification:** The purpose of the delivery package is clearly outlined, highlighting its intended use, functionality, and significance.
 
 - **List of Team Members:** The names of all team members who contributed to this iteration are listed.
+
+
+## Dependencies
+The following dependencies are used:
+- Firebase
+- React
+- React Firebase hooks
+- React icons
+- React router
+- Tailwind CSS
+- Vite
+
 
 ## Contributors
 Parnia Zare  
