@@ -35,8 +35,11 @@ Updated time estimates for the remaining stories/tasks for iteration 3 based on 
 
 Describes the testing approach for the final iteration, ensuring thorough coverage of all features.
 Detailed test plan outlining:
+
   Test conditions: Specific conditions under which each test will be conducted.
+  
   Test inputs: Detailed inputs to be used for each test case.
+  
   Expected outputs: Defined expected outcomes for each test to help with easy identification of discrepancies during testing.
   
 -This plan is pivotal for ensuring the quality and robustness of the final iteration.
