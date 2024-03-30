@@ -32,7 +32,7 @@ const AuthForm = () => {
 
           {/* NOTE: onClick means when the button is clicked, sets isLogin to its opposite value. The text inside the value is also changed if clicked */}
           <Box cursor={"pointer"} onClick={() => setIsLogin(!isLogin)}>
-            {isLogin ? "Log in" : "Sign up"}
+            {isLogin ? "Sign up" : "Log in" }
           </Box>
         </Flex>
       </Box>
