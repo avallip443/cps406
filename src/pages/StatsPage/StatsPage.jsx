@@ -1,7 +1,16 @@
-import React from "react";
+import React from 'react';
+import useBugData from '../../useBugData';
+import BugStatsGraph from '../../components/BugStatsGraph';
 
 const StatsPage = () => {
-  return <div>StatsPage</div>;
+  const graphData = useBugData();
+
+  return (
+    <div>
+      <h2>Bug Statistics</h2>
+      <BugStatsGraph graphData={graphData} />
+    </div>
+  );
 };
 
 export default StatsPage;
