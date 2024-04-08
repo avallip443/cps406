@@ -44,7 +44,7 @@ const Login = () => {
 
       {/* NOTE: onClick sends the inputted information to the useLogin function!! */}
       <Button
-        colorScheme="red"
+        colorScheme="pink"
         isLoading={loading}
         onClick={() => login(inputs)}
       >

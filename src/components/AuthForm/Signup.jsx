@@ -65,7 +65,7 @@ const Signup = () => {
 
       {/* NOTE: onClick sends the inputted information to the useSignup function */}
       <Button
-        colorScheme="purple"
+        colorScheme="pink"
         isLoading={loading}
         onClick={() => signup(inputs)}
       >
