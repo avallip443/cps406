@@ -48,7 +48,7 @@ const AuthForm = () => {
           <Box>{isLogin ? "Make an account?" : "Already have an account?"}</Box>
 
           {/* NOTE: onClick means when the button is clicked, sets isLogin to its opposite value. The text inside the value is also changed if clicked */}
-          <Box ml="2" cursor={"pointer"} onClick={() => setIsLogin(!isLogin)} textDecoration="underline">
+          <Box ml="2" cursor={"pointer"} onClick={() => setIsLogin(!isLogin)} textDecoration="underline" _hover={{color:"blue.700"}}>
             {isLogin ? "Sign up" : "Log in" }
           </Box>
         </Flex>
