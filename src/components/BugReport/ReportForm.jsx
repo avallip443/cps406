@@ -17,24 +17,28 @@ import { useState } from "react";
 import useShowToast from "../../hooks/useShowToast";
 
 const ReportForm = () => {
+  const [userName, setUserName] = useState("")
   const [bugName, setBugName] = useState("");
   const [priorityLevel, setPriorityLevel] = useState("Low");
   const [bugDescription, setBugDescription] = useState("");
+  const [bugStatus, setBugStatus] = useState("Active");
   const showToast = useShowToast();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!bugName || !bugDescription) {
+    if (!userName || !bugName || !bugDescription) {
       showToast("Error", "Please fill in all fields", "error");
       return;
     }
 
     try {
       const newReport = {
+        userName: userName,
         bugName: bugName,
         priorityLevel: priorityLevel,
         bugDescription: bugDescription,
+        bugStatus: bugStatus,
         createdAt: Date.now(),
       };
 
@@ -43,9 +47,11 @@ const ReportForm = () => {
       showToast("Success", "Bug report submitted successfully", "success");
 
       // Clear form fields after submission
+      setUserName("");
       setBugName("");
       setPriorityLevel("Low");
       setBugDescription("");
+      setBugStatus("Active");
     } catch (error) {
       console.error("Error adding document: ", error);
       showToast("Error", "Failed to submit bug report", "error");
@@ -57,6 +63,16 @@ const ReportForm = () => {
       <Box bg={"green"}>
         <Heading>Report a Bug</Heading>
         <form onSubmit={handleSubmit}>
+        <FormControl isRequired>
+            <FormLabel>Your name</FormLabel>
+            <Input
+              type="text"
+              value={userName}
+              onChange={(e) => setUserName(e.target.value)}
+            />
+            <FormHelperText>What is your name?</FormHelperText>
+          </FormControl>
+
           <FormControl isRequired>
             <FormLabel>Bug Name</FormLabel>
             <Input
@@ -72,7 +88,7 @@ const ReportForm = () => {
             <RadioGroup
               defaultValue="Low"
               value={priorityLevel}
-              onChange={(e) => setPriorityLevel(e.target.value)}
+              onChange={(value) => setPriorityLevel(value)}
             >
               <HStack spacing="24px">
                 <Radio value="Low">Low</Radio>
@@ -91,6 +107,22 @@ const ReportForm = () => {
               onChange={(e) => setBugDescription(e.target.value)}
             />
             <FormHelperText>Describe what this bug is.</FormHelperText>
+          </FormControl>
+
+          <FormControl as="fieldset" isRequired>
+            <FormLabel as="legend">Status</FormLabel>
+            <RadioGroup
+              defaultValue="Active"
+              value={bugStatus}
+              onChange={(value) => setBugStatus(value)}
+            >
+              <HStack spacing="24px">
+                <Radio value="Active">Active</Radio>
+                <Radio value="Closed">Closed</Radio>
+                <Radio value="Fixed">Fixed</Radio>
+              </HStack>
+            </RadioGroup>
+            <FormHelperText>Select status of bug.</FormHelperText>
           </FormControl>
 
           <Button mt={4} colorScheme="teal" type="submit">
