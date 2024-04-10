@@ -11,11 +11,11 @@ const BugsPage = () => {
           <Flex gap={20} alignItems="center" height="70vh">
             <Box>
               <Heading textAlign="center" color="black">Current Bugs</Heading>
-              <Container bg={"pink"}>
+              
               <Flex gap={20} alignItems="center" height="50vh">
               <BugReports />
               </Flex>
-              </Container>
+            
             </Box>
           </Flex>
         </Container>

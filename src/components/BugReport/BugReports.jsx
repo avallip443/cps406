@@ -20,10 +20,10 @@ const BugReports = () => {
       ) : (
         <Table variant={"striped"} colorScheme="white" size={"md"}>
           <Thead>
-            <Tr>
+            <Tr >
               <Th color="black">Bug Name</Th>
               <Th color="black">Description</Th>
-              <Th color="black" textAlign="center" >Priority Level</Th>
+              <Th color="black">Priority Level</Th>
               <Th color="black">Status</Th>
               <Th color="black">Created At</Th>
               <Th color="black">User</Th>
