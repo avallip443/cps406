@@ -6,7 +6,7 @@ import BugsPage from "./pages/BugsPage/BugsPage";
 import CreateReport from "./pages/BugsPage/CreateReport";
 import HomePage from "./pages/HomePage/HomePage";
 import StatsPage from "./pages/StatsPage/StatsPage";
-import backgroundImage from "./please 15.png";
+import backgroundImage from "./please 14.jpg";
 
 function App() {
   const [authUser] = useAuthState(auth);
@@ -20,6 +20,7 @@ function App() {
           minHeight: "100vh",
         }}
       >
+
         <Routes>
           {/* Use to only allow authenticated users to view webiste */}
           <Route

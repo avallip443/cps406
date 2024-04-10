@@ -27,14 +27,13 @@ const Sidebar = () => {
           as={RouterLink}
           display={{ base: "none", md: "block" }}
           pl={2}
-          cursor="pointer"
-        >
+          cursor="pointer" >
           <Image
           src = "bug.png" 
           boxSize='150px'
           objectFit='scale-down'
-          transform="rotate(127deg)">
-
+          transform="rotate(127deg)"
+          >
           </Image>
         </Link>
 
@@ -45,7 +44,7 @@ const Sidebar = () => {
          direction={"column"} 
          cursor={"pointer"}  
          w={{ base: 10, md: "full" }}
-         justifyContent={{ base: "", md: "flex-start" }}
+         justifyContent={{ base: "center", md: "flex-start" }}
          alignItems={"center"}
          gap={20}
          borderRadius={6}
