@@ -22,18 +22,17 @@ function App() {
       >
         <Routes>
           {/* Use to only allow authenticated users to view webiste
-
-        <Route
-          path="/"
-          element={authUser ? <HomePage /> : <Navigate to="/auth" />}
-        />
-        <Route
-          path="/auth"
-          element={!authUser ? <AuthPage /> : <Navigate to="/" />}
-        />
-        */}
-          <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
           <Route path="/auth" element={<AuthPage />} />
+        */}
+          <Route
+            path="/"
+            element={authUser ? <HomePage /> : <Navigate to="/auth" />}
+          />
+          <Route
+            path="/auth"
+            element={!authUser ? <AuthPage /> : <Navigate to="/" />}
+          />
           <Route path="/bugs" element={<BugsPage />} />
           <Route path="/createbug" element={<CreateReport />} />
           <Route path="/stats" element={<StatsPage />} />

@@ -4,14 +4,19 @@ import Navbar from "../../components/Navbar/Navbar";
 
 const BugsPage = () => {
   return (
-    <Container maxW={"container.lg"}>
-      <Flex gap={20}>
-        <Box>
-          <Heading>Current Bugs</Heading>
-          <BugReports />
-        </Box>
+    <>
+      <Flex>
+        <Navbar />
+        <Container maxW={"container.lg"}>
+          <Flex gap={20}>
+            <Box>
+              <Heading>Current Bugs</Heading>
+              <BugReports />
+            </Box>
+          </Flex>
+        </Container>
       </Flex>
-    </Container>
+    </>
   );
 };
 

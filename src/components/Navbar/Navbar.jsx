@@ -1,8 +1,11 @@
 import { Box, Button, Flex, Link, Tooltip } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import { TbLogout2 } from "react-icons/tb";
+import useLogout from "../../hooks/useLogout";
 
 const Sidebar = () => {
+  const { handleLogout, isLoggingOut, error } = useLogout();
+
   return (
     <Box
       top={0}
@@ -13,22 +16,21 @@ const Sidebar = () => {
       borderColor={"whiteAlpha.300"}
       py={8}
       px={{ base: 1, md: 4 }}
-      bg={'red'}
+      bg={"red"}
     >
       <Flex direction={"column"} gap={10} w="full" height={"full"}>
-        {/* desktop display */}
         <Link
           to={"/"}
-          /*as={RouterLink}*/
+          as={RouterLink}
           display={{ base: "none", md: "block" }}
           pl={2}
           cursor="pointer"
         >
+          {/* TODO: Add bug logo */}
         </Link>
 
-       
         <Flex direction={"column"} gap={5} cursor={"pointer"}>
-          {/*<SidebarItems />*/}
+          {/*<NavbarItems />*/}
         </Flex>
 
         {/* Logout button */}
@@ -49,14 +51,14 @@ const Sidebar = () => {
             mt={"auto"}
             p={2}
             _hover={{ bg: "whiteAlpha.400" }}
-            /*onClick={handleLogout}*/
+            onClick={handleLogout}
           >
             <TbLogout2 size={25} />
             <Button
               display={{ base: "none", md: "block" }}
               variant={"ghost"}
               _hover={{ bg: "transparent" }}
-              /*isLoading={isLoggingOut}*/
+              isLoading={isLoggingOut}
             >
               Logout
             </Button>
