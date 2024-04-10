@@ -31,6 +31,7 @@ function App() {
             element={!authUser ? <AuthPage /> : <Navigate to="/" />}
           />
           <Route path="/bugs" element={<BugsPage />} />
+          <Route path="/createreport" element={<CreateReport />} />
           <Route path="/stats" element={<StatsPage />} />
         </Routes>
       </div>
