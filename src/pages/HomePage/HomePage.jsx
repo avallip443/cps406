@@ -8,8 +8,7 @@ const HomePage = () => {
         <Navbar />
       </Flex>
       <div>
-        <p color={"green"}>hi</p>
-        <button>bye</button>
+       
       </div>
     </>
   );
