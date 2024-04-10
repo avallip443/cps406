@@ -1,10 +1,17 @@
 import { Box, Button, Flex, Link, Tooltip } from "@chakra-ui/react";
 import { Link as RouterLink } from "react-router-dom";
 import { TbLogout2 } from "react-icons/tb";
+import { useNavigate } from "react-router-dom";
 import useLogout from "../../hooks/useLogout";
 
 const Sidebar = () => {
-  const { handleLogout, isLoggingOut, error } = useLogout();
+  const { handleLogout, isLoggingOut } = useLogout();
+  const navigate = useNavigate();
+
+  const handleLogoutClick = () => {
+    handleLogout();
+    navigate("/auth"); // Navigate to /auth after logout
+  };
 
   return (
     <Box
@@ -51,7 +58,7 @@ const Sidebar = () => {
             mt={"auto"}
             p={2}
             _hover={{ bg: "whiteAlpha.400" }}
-            onClick={handleLogout}
+            onClick={handleLogoutClick}
           >
             <TbLogout2 size={25} />
             <Button

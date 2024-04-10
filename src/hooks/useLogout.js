@@ -11,7 +11,7 @@ const useLogout = () => {
   const handleLogout = async () => {
     try {
       await signOut();
-      localStorage.removeItem("user-info");
+      console.log("User successfully logged out");
       logoutUser();
     } catch (error) {
       showToast("Error", error.message, "error");

@@ -21,10 +21,7 @@ function App() {
         }}
       >
         <Routes>
-          {/* Use to only allow authenticated users to view webiste
-        <Route path="/" element={<HomePage />} />
-          <Route path="/auth" element={<AuthPage />} />
-        */}
+          {/* Use to only allow authenticated users to view webiste */}
           <Route
             path="/"
             element={authUser ? <HomePage /> : <Navigate to="/auth" />}
@@ -34,7 +31,6 @@ function App() {
             element={!authUser ? <AuthPage /> : <Navigate to="/" />}
           />
           <Route path="/bugs" element={<BugsPage />} />
-          <Route path="/createbug" element={<CreateReport />} />
           <Route path="/stats" element={<StatsPage />} />
         </Routes>
       </div>

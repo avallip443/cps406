@@ -14,6 +14,7 @@ const useLogin = () => {
     /* shows error if email or password is empty */
     if (!inputs.email || !inputs.password) {
       showToast("Error", "Please fill in the fields", "error");
+      return;
     }
 
     try {
