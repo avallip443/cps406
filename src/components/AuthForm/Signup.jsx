@@ -24,26 +24,26 @@ const Signup = () => {
     <>
       <Input
         size={"sm"}
-        placeholder="Full name"
+        placeholder={"Full name"}
         _placeholder={{ color: "gray.300" }}
         borderColor={"gray.300"}
-        type="text"
+        type={"text"}
         value={inputs.fullName}
         onChange={(e) => setInputs({ ...inputs, fullname: e.target.value })}
       />
       <Input
         size={"sm"}
-        placeholder="Email"
+        placeholder={"Email"}
         _placeholder={{ color: "gray.300" }}
         borderColor={"gray.300"}
-        type="email"
+        type={"email"}
         value={inputs.email}
         onChange={(e) => setInputs({ ...inputs, email: e.target.value })}
       />
       <InputGroup>
         <Input
           size={"sm"}
-          placeholder="Password"
+          placeholder={"Password"}
           _placeholder={{ color: "gray.300" }}
           borderColor={"gray.300"}
           type={showPassword ? "text" : "password"}
@@ -63,15 +63,14 @@ const Signup = () => {
 
       {/* displays errors with signing up using error from signup hook */}
       {error && (
-        <Alert status="error" borderRadius={4} fontSize={13} p={2}>
+        <Alert status={"error"} borderRadius={4} fontSize={13} p={2}>
           <AlertIcon fontSize={12} />
           {error.message}
         </Alert>
       )}
 
-      {/* NOTE: onClick sends the inputted information to the useSignup function */}
       <Button
-        colorScheme="pink"
+        colorScheme={"pink"}
         isLoading={loading}
         onClick={() => signup(inputs)}
       >
