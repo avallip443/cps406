@@ -14,8 +14,6 @@ import {
 import { collection, addDoc } from "firebase/firestore";
 import { firestore } from "../../firebase/firebase";
 import { useState } from "react";
-import useAuthStore from "../../store/authStore";
-import useReportStore from "../../store/reportStore";
 import useShowToast from "../../hooks/useShowToast";
 
 const ReportForm = () => {
@@ -23,7 +21,6 @@ const ReportForm = () => {
   const [priorityLevel, setPriorityLevel] = useState("Low");
   const [bugDescription, setBugDescription] = useState("");
   const showToast = useShowToast();
-  const authUser = useAuthStore((state) => state.user);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,20 +36,17 @@ const ReportForm = () => {
         priorityLevel: priorityLevel,
         bugDescription: bugDescription,
         createdAt: Date.now(),
-        createdBy: authUser.uid,
       };
 
-      const reportDocRef = await addDoc(
-        collection(firestore, "reports"),
-        newReport
-      );
+      // Use addDoc to automatically generate a unique ID for the new document
+      await addDoc(collection(firestore, "reports"), newReport);
       showToast("Success", "Bug report submitted successfully", "success");
 
       // Clear form fields after submission
       setBugName("");
       setPriorityLevel("Low");
       setBugDescription("");
-    } catch(error) {
+    } catch (error) {
       console.error("Error adding document: ", error);
       showToast("Error", "Failed to submit bug report", "error");
     }
