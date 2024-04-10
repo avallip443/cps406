@@ -18,20 +18,20 @@ const BugReports = () => {
       {isLoading ? (
         <Spinner size="xl" />
       ) : (
-        <Table variant={"striped"} colorScheme={"teal"} size={"md"}>
+        <Table variant={"striped"} colorScheme="white" size={"md"}>
           <Thead>
             <Tr>
-              <Th>Bug Name</Th>
-              <Th>Description</Th>
-              <Th>Priority Level</Th>
-              <Th>Status</Th>
-              <Th>Created At</Th>
-              <Th>User</Th>
+              <Th color="black">Bug Name</Th>
+              <Th color="black">Description</Th>
+              <Th color="black" textAlign="center" >Priority Level</Th>
+              <Th color="black">Status</Th>
+              <Th color="black">Created At</Th>
+              <Th color="black">User</Th>
             </Tr>
           </Thead>
-          <Tbody>
+          <Tbody color={"black"}>
             {reports?.map((report) => (
-              <Tr key={report.id}>
+              <Tr key={report.id} _odd={{ bg: "pink.200" }} _even={{ bg: "pink.100" }}>
                 <Td>{report.bugName}</Td>
                 <Td>{report.bugDescription}</Td>
                 <Td>{report.priorityLevel}</Td>
