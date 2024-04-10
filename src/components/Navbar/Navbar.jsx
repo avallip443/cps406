@@ -16,17 +16,11 @@ const Sidebar = () => {
 
   return (
     <Box
-      top={0}
-      left={0}
-      position={"sticky"}
-      height={"100vh"}
-      borderRight={"5px solid"}
-      borderColor={"white"}
-      py={8}
-      px={{ base: 1, md: 4 }}
-      bg={"pink.300"}>
-    
-
+    bg="pink" 
+    height="100vh" 
+    boxShadow="0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)" 
+    borderRadius="3px"
+    p="20px" >
       <Flex direction={"column"} gap={5} w="full" height={"full"}>
         <Link
           to={"/HomePage"}
@@ -45,7 +39,8 @@ const Sidebar = () => {
         </Link>
 
        
-       {/*Home page button*/}
+       {/*All page buttons*/}
+       
         <Flex 
          direction={"column"} 
          cursor={"pointer"}  
@@ -56,23 +51,48 @@ const Sidebar = () => {
          borderRadius={6}
          mt={{ base: "auto", md: 4 }}
          p={2}>
+
+          <Link
+          to={"/HomePage"}
+          as={RouterLink}
+          display={{ base: "none", md: "block" }}
+          pl={2}
+          cursor="pointer"
+          _hover={{ textDecoration: "none" }}>
           <Button
               display={{ base: "none", md: "block" }}
-              variant={"ghost"}>
+              colorScheme='pink' variant='solid'>
               Home Page
             </Button>
-            
+          </Link>
+          
+          <Link
+          to={"/StatsPage"}
+          as={RouterLink}
+          display={{ base: "none", md: "block" }}
+          pl={2}
+          cursor="pointer"
+          _hover={{ textDecoration: "none" }}>
             <Button
               display={{ base: "none", md: "block" }}
-              variant={"ghost"}>
+              colorScheme='pink' variant='solid'>
               Stats Page
             </Button>
-            
+          </Link> 
+
+          <Link
+          to={"/BugsPage"}
+          as={RouterLink}
+          display={{ base: "none", md: "block" }}
+          pl={2}
+          cursor="pointer"
+          _hover={{ textDecoration: "none" }}>  
             <Button
               display={{ base: "none", md: "block" }}
-              variant={"ghost"}>
+              colorScheme='pink' variant='solid'>
               Bugs Page
             </Button>
+          </Link>
         </Flex>
 
         {/* Logout button */}
@@ -100,6 +120,7 @@ const Sidebar = () => {
             <Button
               display={{ base: "none", md: "block" }}
               variant={"ghost"}
+              color="black"
               isLoading={isLoggingOut}
               alignItems="center">
               <Flex alignItems="center" gap={10}> 
