@@ -1,9 +1,16 @@
-import React from 'react'
+import { Box, Container, Flex } from "@chakra-ui/react";
+import BugReports from "../../components/BugReport/BugReports";
 
 const BugsPage = () => {
   return (
-    <div>BugsPage</div>
-  )
-}
+    <Container maxW={"container.lg"}>
+      <Flex gap={20}>
+        <Box>
+          <BugReports />
+        </Box>
+      </Flex>
+    </Container>
+  );
+};
 
-export default BugsPage
+export default BugsPage;
