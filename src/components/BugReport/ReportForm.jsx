@@ -60,20 +60,21 @@ const ReportForm = () => {
 
   return (
     <>
-      <Box bg={"green"}>
-        <Heading>Report a Bug</Heading>
+      <Box bg={"pink"} w='100%' p={4} >
+        <Heading size='2xl'>Report a Bug</Heading>
         <form onSubmit={handleSubmit}>
-        <FormControl isRequired>
+        <FormControl isRequired mt={8}>
             <FormLabel>Your name</FormLabel>
             <Input
               type="text"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
+              
             />
             <FormHelperText>What is your name?</FormHelperText>
           </FormControl>
 
-          <FormControl isRequired>
+          <FormControl isRequired mt={8}>
             <FormLabel>Bug Name</FormLabel>
             <Input
               type="text"
@@ -83,14 +84,15 @@ const ReportForm = () => {
             <FormHelperText>What will you call this bug?</FormHelperText>
           </FormControl>
 
-          <FormControl as="fieldset" isRequired>
+          <FormControl as="fieldset" isRequired mt={8}>
             <FormLabel as="legend">Priority Level</FormLabel>
             <RadioGroup
               defaultValue="Low"
               value={priorityLevel}
               onChange={(value) => setPriorityLevel(value)}
+              colorScheme='teal'
             >
-              <HStack spacing="24px">
+              <HStack spacing="48px">
                 <Radio value="Low">Low</Radio>
                 <Radio value="Medium">Medium</Radio>
                 <Radio value="High">High</Radio>
@@ -99,7 +101,7 @@ const ReportForm = () => {
             <FormHelperText>Select the priority level.</FormHelperText>
           </FormControl>
 
-          <FormControl isRequired>
+          <FormControl isRequired mt={8}>
             <FormLabel>Bug Description</FormLabel>
             <Input
               type="text"
@@ -109,14 +111,15 @@ const ReportForm = () => {
             <FormHelperText>Describe what this bug is.</FormHelperText>
           </FormControl>
 
-          <FormControl as="fieldset" isRequired>
+          <FormControl as="fieldset" isRequired mt={8}>
             <FormLabel as="legend">Status</FormLabel>
             <RadioGroup
               defaultValue="Active"
               value={bugStatus}
               onChange={(value) => setBugStatus(value)}
+              colorScheme='teal'
             >
-              <HStack spacing="24px">
+              <HStack spacing="48px">
                 <Radio value="Active">Active</Radio>
                 <Radio value="Closed">Closed</Radio>
                 <Radio value="Fixed">Fixed</Radio>
@@ -125,7 +128,7 @@ const ReportForm = () => {
             <FormHelperText>Select status of bug.</FormHelperText>
           </FormControl>
 
-          <Button mt={4} colorScheme="teal" type="submit">
+          <Button mt={12} colorScheme="teal" type="submit" textColor="white">
             Submit
           </Button>
         </form>
