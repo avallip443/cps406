@@ -10,7 +10,8 @@ const HomePage = () => {
       padding: '20px',
       boxSizing: 'border-box',
       alignItems: 'center', 
-      backgroundColor: '#FFDBD1'
+      backgroundColor: '#F8F3EA',
+
     }}>
       <h1 style={{
         fontSize: 36,
