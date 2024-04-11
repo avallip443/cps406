@@ -5,7 +5,7 @@ import ReportForm from "../../components/BugReport/ReportForm";
 const CreateReport = () => {
   return (
     <>
-      <Flex>
+      <Flex bgColor={'#f8f3ea'}>
         <Navbar />
         <Container maxW={"container.lg"}>
           <Flex gap={20}>

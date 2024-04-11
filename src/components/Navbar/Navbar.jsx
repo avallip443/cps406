@@ -27,7 +27,7 @@ const Sidebar = () => {
       top={0}
       left={0}
       position={"sticky"}
-      bg={"pink"}
+      bg={"#0b1957"}
       height={"100vh"}
       boxShadow={
         "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)"
@@ -70,7 +70,6 @@ const Sidebar = () => {
           >
             <Button
               display={{ base: "none", md: "block" }}
-              colorScheme="pink"
               variant="solid"
             >
               Home
@@ -86,7 +85,6 @@ const Sidebar = () => {
           >
             <Button
               display={{ base: "none", md: "block" }}
-              colorScheme="pink"
               variant="solid"
             >
               Statistics
@@ -102,7 +100,6 @@ const Sidebar = () => {
           >
             <Button
               display={{ base: "none", md: "block" }}
-              colorScheme="pink"
               variant="solid"
             >
               Bugs
@@ -130,18 +127,18 @@ const Sidebar = () => {
             onClick={handleLogoutClick}
             _hover={{ bg: "whiteAlpha.400" }}
           >
-            <Button
+            <Box
               display={{ base: "none", md: "block" }}
               variant={"ghost"}
-              color="black"
               isLoading={isLoggingOut}
               alignItems="center"
+              py={2}
             >
               <Flex alignItems="center" gap={10}>
                 <TbLogout2 size={22} />
                 Logout
               </Flex>
-            </Button>
+            </Box>
           </Flex>
         </Tooltip>
       </Flex>

@@ -5,12 +5,12 @@ import Navbar from "../../components/Navbar/Navbar";
 const BugsPage = () => {
   return (
     <>
-      <Flex>
+      <Flex bgColor={'#f8f3ea'}>
         <Navbar />
         <Container maxW={"container.lg"}>
           <Flex gap={20}>
             <Box>
-              <Heading>Current Bugs</Heading>
+              <Heading color={'black'}>Current Bugs</Heading>
               <BugReports />
             </Box>
           </Flex>

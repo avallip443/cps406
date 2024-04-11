@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar/Navbar";
 const HomePage = () => {
   return (
     <>
-      <Flex>
+      <Flex bgColor={'#f8f3ea'}>
         <Navbar />
       </Flex>
       <div>
