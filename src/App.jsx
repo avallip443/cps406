@@ -6,10 +6,6 @@ import BugsPage from "./pages/BugsPage/BugsPage";
 import CreateReport from "./pages/BugsPage/CreateReport";
 import HomePage from "./pages/HomePage/HomePage";
 import StatsPage from "./pages/StatsPage/StatsPage";
-<<<<<<< HEAD
-=======
-//import backgroundImage from "./pink.png";
->>>>>>> Bugs
 
 function App() {
   const [authUser] = useAuthState(auth);
@@ -18,7 +14,6 @@ function App() {
     <>
       <div
         style={{
-<<<<<<< HEAD
           position: 'absolute',
           top: 0,
           left: 0,
@@ -27,9 +22,7 @@ function App() {
           backgroundImage: `url(${'./background.png'})`,
           backgroundSize: 'cover',
           zIndex: -1,
-=======
           backgroundColor: "#d0cad0"
->>>>>>> Bugs
         }}
       >
 
