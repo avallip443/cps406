@@ -24,16 +24,6 @@ const BugReports = () => {
       ) : (
         <Table variant={"striped"} colorScheme="white" size={"md"}>
           <Thead>
-<<<<<<< HEAD
-            <Tr>
-              <Th>Bug Name</Th>
-              <Th>Description</Th>
-              <Th>Priority Level</Th>
-              <Th>Status</Th>
-              <Th>Created At</Th>
-              <Th>User</Th>
-              <Th>Edit Bug</Th>
-=======
             <Tr >
               <Th color="black">Bug Name</Th>
               <Th color="black">Description</Th>
@@ -41,7 +31,6 @@ const BugReports = () => {
               <Th color="black">Status</Th>
               <Th color="black">Created At</Th>
               <Th color="black">User</Th>
->>>>>>> 6f667f682a7014f47e063fb0862fde9351610864
             </Tr>
           </Thead>
           <Tbody color={"black"}>
