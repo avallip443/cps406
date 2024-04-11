@@ -2,12 +2,25 @@ import { Box, Flex, VStack, Center } from "@chakra-ui/react";
 import { useState } from "react";
 import Login from "./Login";
 import Signup from "./Signup";
+import { Image } from "@chakra-ui/react";
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
 
   return (
     <>
+    
+    <Image
+        src = "bug.png" 
+        boxSize='150px'
+        objectFit='scale-down'
+        transform="rotate(127deg)"
+        position="fixed"
+        top="20px" 
+        left="20px" 
+        zIndex="999" >
+    </Image>
+
       <Center>
         <Box
           maxW={"350px"}

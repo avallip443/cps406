@@ -24,6 +24,7 @@ function App() {
           zIndex: -1,
         }}
       >
+
         <Routes>
           {/* Use to only allow authenticated users to view webiste */}
           <Route
