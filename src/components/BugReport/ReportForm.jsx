@@ -60,37 +60,38 @@ const ReportForm = () => {
 
   return (
     <>
-      <Box bg={"green"}>
-        <Heading>Report a Bug</Heading>
+      <Box bg={"#e37ab1"} w='100%' p={4} color='white'>
+        <Heading size='xl'>Report a Bug</Heading>
         <form onSubmit={handleSubmit}>
-        <FormControl isRequired>
+        <FormControl isRequired mt={8}>
             <FormLabel>Your name</FormLabel>
             <Input
               type="text"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
+              placeholder="e.g. John Doe"
             />
-            <FormHelperText>What is your name?</FormHelperText>
           </FormControl>
 
-          <FormControl isRequired>
+          <FormControl isRequired mt={8}>
             <FormLabel>Bug Name</FormLabel>
             <Input
               type="text"
               value={bugName}
               onChange={(e) => setBugName(e.target.value)}
+              placeholder="What will you call this bug?"
             />
-            <FormHelperText>What will you call this bug?</FormHelperText>
           </FormControl>
 
-          <FormControl as="fieldset" isRequired>
+          <FormControl as="fieldset" isRequired mt={8}>
             <FormLabel as="legend">Priority Level</FormLabel>
             <RadioGroup
               defaultValue="Low"
               value={priorityLevel}
               onChange={(value) => setPriorityLevel(value)}
+              colorScheme='teal'
             >
-              <HStack spacing="24px">
+              <HStack spacing="62px">
                 <Radio value="Low">Low</Radio>
                 <Radio value="Medium">Medium</Radio>
                 <Radio value="High">High</Radio>
@@ -99,24 +100,25 @@ const ReportForm = () => {
             <FormHelperText>Select the priority level.</FormHelperText>
           </FormControl>
 
-          <FormControl isRequired>
+          <FormControl isRequired mt={8}>
             <FormLabel>Bug Description</FormLabel>
             <Input
               type="text"
               value={bugDescription}
               onChange={(e) => setBugDescription(e.target.value)}
+              placeholder='Please describe the bug in full detail...'
             />
-            <FormHelperText>Describe what this bug is.</FormHelperText>
           </FormControl>
 
-          <FormControl as="fieldset" isRequired>
+          <FormControl as="fieldset" isRequired mt={8}>
             <FormLabel as="legend">Status</FormLabel>
             <RadioGroup
               defaultValue="Active"
               value={bugStatus}
               onChange={(value) => setBugStatus(value)}
+              colorScheme='teal'
             >
-              <HStack spacing="24px">
+              <HStack spacing="62px">
                 <Radio value="Active">Active</Radio>
                 <Radio value="Closed">Closed</Radio>
                 <Radio value="Fixed">Fixed</Radio>
@@ -125,7 +127,7 @@ const ReportForm = () => {
             <FormHelperText>Select status of bug.</FormHelperText>
           </FormControl>
 
-          <Button mt={4} colorScheme="teal" type="submit">
+          <Button mt={12} colorScheme="teal" type="submit" color='white'>
             Submit
           </Button>
         </form>
