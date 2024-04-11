@@ -1,21 +1,42 @@
-import useAuthStore from "../store/authStore";
-import useReportStore from "../store/reportStore";
-import useShowToast from "./useShowToast";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, query } from "firebase/firestore";
 import { firestore } from "../firebase/firebase";
 import { useEffect, useState } from "react";
+import useReportStore from "../store/reportStore";
+import useShowToast from "./useShowToast";
 
 const useGetBugReports = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const authUser = useAuthStore((state) => state.user);
-  const { reports, setReport } = useReportStore();
+  const { setReport } = useReportStore();
   const showToast = useShowToast();
+  const [reports, setReports] = useState([]); 
 
   useEffect(() => {
     const getBugReports = async () => {
-        setIsLoading(true);
-    }
-    
-  })
+      setIsLoading(true);
 
+      try {
+        const q = query(collection(firestore, "reports"));
+        const querySnapshot = await getDocs(q);
+        const fetchedReports = [];
+
+        querySnapshot.forEach((doc) => {
+          fetchedReports.push({ id: doc.id, ...doc.data() });
+        });
+
+        fetchedReports.sort((a, b) => b.createdAt - a.createdAt); // newest reports first
+
+        setReports(fetchedReports); 
+      } catch (error) {
+        console.error("Error fetching bug reports: ", error);
+        showToast("Error", "Failed to fetch bug reports", "error");
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    getBugReports();
+  }, [showToast, setReport]);
+
+  return { isLoading, reports };
 };
+
+export default useGetBugReports;

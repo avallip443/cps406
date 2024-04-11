@@ -8,10 +8,14 @@ import {
   Td,
   Spinner,
 } from "@chakra-ui/react";
-import useGetBugReports from "../../hooks/getBugReports";
+import { EditIcon } from '@chakra-ui/icons'
+import useAuthStore from "../../store/authStore";
+import useGetBugReports from "../../hooks/useGetBugReports";
 
 const BugReports = () => {
   const { isLoading, reports } = useGetBugReports();
+  const authUser = useAuthStore((state) => state.user);
+  console.log(authUser);
 
   return (
     <Container maxW={"container.md"}>
@@ -27,6 +31,7 @@ const BugReports = () => {
               <Th>Status</Th>
               <Th>Created At</Th>
               <Th>User</Th>
+              <Th>Edit Bug</Th>
             </Tr>
           </Thead>
           <Tbody>
@@ -38,6 +43,11 @@ const BugReports = () => {
                 <Td>{report.bugStatus}</Td>
                 <Td>{new Date(report.createdAt).toLocaleString()}</Td>
                 <Td>{report.userName}</Td>
+                <Td>
+                  {authUser && authUser.fullname === report.userName && (
+                    <EditIcon />
+                  )}
+                </Td>
               </Tr>
             ))}
           </Tbody>
