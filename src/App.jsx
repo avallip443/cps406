@@ -6,7 +6,6 @@ import BugsPage from "./pages/BugsPage/BugsPage";
 import CreateReport from "./pages/BugsPage/CreateReport";
 import HomePage from "./pages/HomePage/HomePage";
 import StatsPage from "./pages/StatsPage/StatsPage";
-import backgroundImage from "./please 15.png";
 
 function App() {
   const [authUser] = useAuthState(auth);
@@ -15,9 +14,14 @@ function App() {
     <>
       <div
         style={{
-          backgroundImage: `url(${backgroundImage})`,
-          backgroundSize: "100%",
-          minHeight: "100vh",
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          hiehgt: '100%',
+          backgroundImage: `url(${'./background.png'})`,
+          backgroundSize: 'cover',
+          zIndex: -1,
         }}
       >
         <Routes>
