@@ -1,4 +1,18 @@
-import { Box, Container, Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Flex,
+  Heading,
+  Spinner,
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  Text,
+  VStack,
+} from "@chakra-ui/react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -94,7 +108,7 @@ const StatsPage = () => {
   if (isLoading) {
     return (
       <Flex justify="center" align="center" height="100vh">
-        <Text color="#0B1957">Loading...</Text>
+        <Spinner size="xl" />
       </Flex>
     );
   }
@@ -103,7 +117,7 @@ const StatsPage = () => {
     <>
       <Flex bgColor={"#f8f3ea"}>
         <Navbar />
-        <Container maxW="container.lg" m={5}>
+        <Container maxW="container.lg" my={12}>
           <VStack spacing={5} align="stretch">
             <Heading color={"#0B1957"} textAlign={"center"}>
               Bug Statistics
@@ -114,65 +128,79 @@ const StatsPage = () => {
               bgColor={"pink.200"}
               borderRadius={10}
               py={5}
-              px={24}
             >
-              <Flex justifyContent={"space-between"}>
-                <Flex direction={"column"} gap={6}>
-                  <Box>
-                    <Heading size="md" color="#0B1957">
-                      Bugs:
-                    </Heading>
-                    <Text color="#0B1957">Total Bugs: {totalBugs}</Text>
-                  </Box>
-
-                  <Box>
-                    <Heading size="md" color="#0B1957">
-                      Bugs by Priority Level:
-                    </Heading>
-                    {Object.entries(bugsByPriority).map(([level, count]) => (
-                      <Text
-                        key={level}
-                        color="#0B1957"
-                      >{`${level}: ${count}`}</Text>
-                    ))}
-                  </Box>
-                </Flex>
-
-                <Flex direction={"column"} gap={6}>
-                  <Box>
-                    <Heading size="md" color="#0B1957">
-                      Bugs by Status:
-                    </Heading>
-                    {Object.entries(bugsByStatus).map(([status, count]) => (
-                      <Text
-                        key={status}
-                        color="#0B1957"
-                      >{`${status}: ${count}`}</Text>
-                    ))}
-                  </Box>
-
-                  <Box>
-                    <Heading size="md" color="#0B1957">
-                      Bugs by Sprint:
-                    </Heading>
-                    <Text color="#0B1957">
-                      Sprint 1 - Total: {sprintStats.sprint1.total}, Active:{" "}
-                      {sprintStats.sprint1.active}, Closed:{" "}
-                      {sprintStats.sprint1.closed}
-                    </Text>
-                    <Text color="#0B1957">
-                      Sprint 2 - Total: {sprintStats.sprint2.total}, Active:{" "}
-                      {sprintStats.sprint2.active}, Closed:{" "}
-                      {sprintStats.sprint2.closed}
-                    </Text>
-                  </Box>
-                </Flex>
-              </Flex>
+              <Table>
+                <Thead text>
+                  <Tr bgColor={"gray.200"}>
+                    <Th
+                      color={"black"}
+                      textAlign={"center"}
+                      border={"1px solid"}
+                    >
+                      Total Bugs
+                    </Th>
+                    <Th
+                      color={"black"}
+                      textAlign={"center"}
+                      border={"1px solid"}
+                    >
+                      Bugs by Status
+                    </Th>
+                    <Th
+                      color={"black"}
+                      textAlign={"center"}
+                      border={"1px solid"}
+                    >
+                      Bugs by Priority Level
+                    </Th>
+                    <Th
+                      color={"black"}
+                      textAlign={"center"}
+                      border={"1px solid"}
+                    >
+                      Bugs by Sprint
+                    </Th>
+                  </Tr>
+                </Thead>
+                <Tbody color={"black"}>
+                  <Tr _even={{ bg: "pink.100" }} _odd={{ bg: "white" }}>
+                    <Td textAlign={"center"} border={"1px solid"}>{totalBugs}</Td>
+                    <Td textAlign={"center"} border={"1px solid"}>
+                      {Object.entries(bugsByPriority).map(([level, count]) => (
+                        <Text
+                          key={level}
+                          color="#0B1957"
+                        >{`${level}: ${count}`}</Text>
+                      ))}
+                    </Td>
+                    <Td textAlign={"center"} border={"1px solid"}>
+                      {Object.entries(bugsByStatus).map(([status, count]) => (
+                        <Text
+                          key={status}
+                          color="#0B1957"
+                        >{`${status}: ${count}`}</Text>
+                      ))}
+                    </Td>
+                    <Td textAlign={"center"} border={"1px solid"}>
+                      <Text color="#0B1957">
+                        Sprint 1 - Total: {sprintStats.sprint1.total}, Active:{" "}
+                        {sprintStats.sprint1.active}, Closed:{" "}
+                        {sprintStats.sprint1.closed}
+                      </Text>
+                      <Text color="#0B1957">
+                        Sprint 2 - Total: {sprintStats.sprint2.total}, Active:{" "}
+                        {sprintStats.sprint2.active}, Closed:{" "}
+                        {sprintStats.sprint2.closed}
+                      </Text>
+                    </Td>
+                  </Tr>
+                </Tbody>
+              </Table>
             </Container>
 
             {/* Add the graph component here */}
             <Box>
-              <Heading size="md" color="#0B1957">
+              <Heading size="lg" color="#0B1957" textAlign={'center'} mt={6} mb={4}>
                 Bug Trends by Sprint
               </Heading>
               <Line data={graphData} />

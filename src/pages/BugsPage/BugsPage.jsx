@@ -7,7 +7,10 @@ const BugsPage = () => {
     <>
       <Flex bgColor={"#f8f3ea"}>
         <Navbar />
-        <Container maxW={"container.lg"}>
+        <Container maxW={"container.lg"} mt={12}>
+          <Heading textAlign={"center"} color={"black"} mb={-12}>
+            Current Bugs
+          </Heading>
           <Flex
             gap={20}
             justifyContent={"center"}
@@ -15,9 +18,6 @@ const BugsPage = () => {
             height="70vh"
           >
             <Box bgColor={"pink.200"} py={4} borderRadius={16}>
-              <Heading textAlign={"center"} color={"black"} mb={4}>
-                Current Bugs
-              </Heading>
               <BugReports />
             </Box>
           </Flex>
