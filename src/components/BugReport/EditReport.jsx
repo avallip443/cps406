@@ -21,7 +21,7 @@ import { useEffect, useState } from "react";
 import useEditReport from "../../hooks/useEditReport";
 import useShowToast from "../../hooks/useShowToast";
 
-const EditReport = ({ isOpen, onClose, report }) => {
+const EditReport = ({ isOpen, onClose, report, updateReports }) => {
   const [isUpdating, setIsUpdating] = useState(false);
   const showToast = useShowToast();
   const { editReport } = useEditReport();
@@ -49,6 +49,7 @@ const EditReport = ({ isOpen, onClose, report }) => {
     try {
       await editReport(report.id, inputs);
       onClose();
+      updateReports();
     } catch (error) {
       showToast("Error", error.message, "error");
     } finally {
@@ -60,21 +61,21 @@ const EditReport = ({ isOpen, onClose, report }) => {
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
       <ModalContent
-        bg={"black"}
+        bg={"#0b1833"}
         boxShadow={"xl"}
-        border={"1px solid gray"}
+        border={"1px solid black"}
         mx={3}
       >
         <ModalHeader />
         <ModalCloseButton />
         <ModalBody>
-          <Flex bg={"black"}>
-            <Stack spacing={4} w={"full"} maxW={"md"} bg={"black"} p={6} my={0}>
+          <Flex>
+            <Stack spacing={4} w={"full"} maxW={"md"} p={6} my={0}>
               <Heading lineHeight={1.1} fontSize={{ base: "2xl", sm: "3xl" }}>
                 Edit Bug
               </Heading>
 
-              <FormControl>
+              <FormControl isRequired>
                 <FormLabel fontSize={"sm"}>Description</FormLabel>
                 <Input
                   placeholder={"Description"}
@@ -106,7 +107,7 @@ const EditReport = ({ isOpen, onClose, report }) => {
               </FormControl>
 
               <FormControl as="fieldset" isRequired>
-                <FormLabel as="legend">Status</FormLabel>
+                <FormLabel as="legend" fontSize={'sm'}>Status</FormLabel>
                 <RadioGroup
                   value={inputs.bugStatus}
                   onChange={(value) =>
