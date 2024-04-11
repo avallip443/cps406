@@ -10,7 +10,7 @@ const BugsPage = () => {
         <Container maxW={"container.lg"}>
           <Flex gap={20} alignItems="center" height="70vh">
             <Box>
-              <Heading textAlign="center" color="black">Current Bugs</Heading>
+              <Heading textAlign="center" color="#0B1957">Current Bugs</Heading>
               <Flex gap={20} alignItems="center" height="50vh">
               <BugReports />
               </Flex>

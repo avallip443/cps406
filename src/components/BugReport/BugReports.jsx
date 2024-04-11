@@ -35,15 +35,15 @@ const BugReports = () => {
           <Table variant={"striped"} colorScheme="white" size={"md"}>
             <Thead>
               <Tr>
-                <Th color="black">Bug Name</Th>
-                <Th color="black">Description</Th>
-                <Th color="black">Priority Level</Th>
-                <Th color="black">Status</Th>
-                <Th color="black">Created At</Th>
-                <Th color="black">User</Th>
+                <Th color="#0B1957">Bug Name</Th>
+                <Th color="#0B1957">Description</Th>
+                <Th color="#0B1957">Priority Level</Th>
+                <Th color="#0B1957">Status</Th>
+                <Th color="#0B1957">Created At</Th>
+                <Th color="#0B1957">User</Th>
               </Tr>
             </Thead>
-            <Tbody color={"black"}>
+            <Tbody color={"#0B1957"}>
               {reports?.map((report) => (
                 <Tr
                   key={report.id}
