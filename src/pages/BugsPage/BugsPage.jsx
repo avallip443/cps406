@@ -5,15 +5,20 @@ import Navbar from "../../components/Navbar/Navbar";
 const BugsPage = () => {
   return (
     <>
-      <Flex bgColor={'#f8f3ea'} gap={20}>
+      <Flex bgColor={"#f8f3ea"}>
         <Navbar />
         <Container maxW={"container.lg"}>
-          <Flex gap={20} alignItems="center" height="70vh">
-            <Box>
-              <Heading textAlign="center" color="black">Current Bugs</Heading>
-              <Flex gap={20} alignItems="center" height="50vh">
+          <Flex
+            gap={20}
+            justifyContent={"center"}
+            alignItems={"center"}
+            height="70vh"
+          >
+            <Box bgColor={"pink.200"} py={4} borderRadius={16}>
+              <Heading textAlign={"center"} color={"black"} mb={4}>
+                Current Bugs
+              </Heading>
               <BugReports />
-              </Flex>
             </Box>
           </Flex>
         </Container>
