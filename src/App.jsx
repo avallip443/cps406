@@ -19,7 +19,7 @@ function App() {
           left: 0,
           width: '100%',
           hiehgt: '100%',
-          backgroundImage: `url(${'./background.png'})`,
+          backgroundImage: `url(${'./background2.jpg'})`,
           backgroundSize: 'cover',
           zIndex: -1,
           backgroundColor: "#d0cad0"
