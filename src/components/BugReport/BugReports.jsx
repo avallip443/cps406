@@ -1,6 +1,13 @@
 import {
+  Button,
   Container,
   Flex,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalHeader,
+  ModalOverlay,
   Table,
   Thead,
   Tbody,
@@ -9,17 +16,20 @@ import {
   Td,
   Spinner,
 } from "@chakra-ui/react";
-import { EditIcon } from "@chakra-ui/icons";
+import { BellIcon, EditIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 import EditReport from "./EditReport";
 import useAuthStore from "../../store/authStore";
 import useGetBugReports from "../../hooks/useGetBugReports";
+import useShowToast from "../../hooks/useShowToast";
 
 const BugReports = () => {
   const { isLoading, reports, refreshBugReports } = useGetBugReports();
   const authUser = useAuthStore((state) => state.user);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedReport, setSelectedReport] = useState("");
+  const [showSubscribeModal, setShowSubscribeModal] = useState(false);
+  const showToast = useShowToast();
 
   const handleEditClick = (report) => {
     setSelectedReport(report);
@@ -27,8 +37,17 @@ const BugReports = () => {
     console.log(selectedReport);
   };
 
+  const handleNotificationClick = () => {
+    setShowSubscribeModal(true);
+  };
+
   const updateReports = () => {
     refreshBugReports();
+  };
+
+  const handleSubscribe = () => {
+    showToast('Success', 'Subscribed to bug', 'success')
+    setShowSubscribeModal(false);
   };
 
   return (
@@ -86,6 +105,12 @@ const BugReports = () => {
                           onClick={() => handleEditClick(report)}
                         />
                       )}
+                      {authUser && authUser.fullname != report.userName && (
+                        <BellIcon
+                          cursor="pointer"
+                          onClick={handleNotificationClick}
+                        />
+                      )}
                     </Td>
                   </Tr>
                 ))}
@@ -97,6 +122,20 @@ const BugReports = () => {
               report={selectedReport}
               updateReports={updateReports}
             />
+
+            <Modal isOpen={showSubscribeModal} onClose={() => setShowSubscribeModal(false)}>
+              <ModalOverlay />
+              <ModalContent>
+                <ModalHeader>Subscribe for updates</ModalHeader>
+                <ModalCloseButton />
+                <ModalBody>
+                  <p>Do you want to subscribe for updates?</p>
+                  <Button onClick={handleSubscribe} colorScheme="blue" mt={4}>
+                    Subscribe
+                  </Button>
+                </ModalBody>
+              </ModalContent>
+            </Modal>
           </>
         )}
       </Container>
