@@ -5,6 +5,11 @@ import Navbar from "../../components/Navbar/Navbar";
 const BugsPage = () => {
   return (
     <>
+    <div
+        style={{
+          backgroundColor: '#efa9cd'
+        }}
+      >
       <Flex gap={20}>
         <Navbar />
         <Container maxW={"container.lg"}>
@@ -20,6 +25,7 @@ const BugsPage = () => {
           </Flex>
         </Container>
       </Flex>
+      </div>
     </>
   );
 };

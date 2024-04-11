@@ -2,12 +2,26 @@ import { Box, Flex, VStack, Center } from "@chakra-ui/react";
 import { useState } from "react";
 import Login from "./Login";
 import Signup from "./Signup";
+import backgroundImage from "./please 14.jpg";
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
 
   return (
     <>
+    <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: 'cover',
+          zIndex: -1,
+        }}
+      ></div>
+
       <Center>
         <Box
           maxW={"350px"}
