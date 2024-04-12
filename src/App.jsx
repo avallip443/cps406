@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <div
-        style={{
+        style={{          
           backgroundColor: "#f8f3ea"
         }}
       >

@@ -8,19 +8,7 @@ const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
 
   return (
-    <Box
-      style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        hiehgt: "100%",
-        backgroundImage: `url(${"./background2.jpg"})`,
-        backgroundSize: "cover",
-        zIndex: -1,
-        backgroundColor: "#d0cad0",
-      }}
-    >
+    <Box>
       <Image
         src="bug.png"
         boxSize="150px"
