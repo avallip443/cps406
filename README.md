@@ -1,12 +1,22 @@
 # Bug Report System (BRS) 
 
 ## Table of Contents
+- [Contributors](#contributors)
 - [Overview](#overview)
 - [Prerequisites](#prerequisites)
 - [Instructions](#Instructions)
 - [Package Contents](#package-contents)
-- [Contributors](#contributors)
+- [Feature and Usage](#Feature-and-Usage)
+- [Technical Architecture](#Technical-Architecture)
+- [Other Dependencies](#Other-Dependencies)
+  
 
+## Contributors
+Parnia Zare  
+Carole Youssef  
+Arathi Vallipuranathan  
+Micah Pascua  
+Lingyun Du  
 
 ## Overview
 
@@ -110,24 +120,23 @@ This section contains:
 
 - **List of Team Members:** The names of all team members who contributed to this iteration are listed.
 
+## Feature-and-Usage
+- User Authentication: Log in, register, and logout functionalities are provided using Firebase authentication.
+- Bug Reporting: Users can create, edit, and close bug reports through a form-based interface.
+- Real-Time Updates: Email notifications are sent at each stage of the bug repair process.
 
-## Dependencies
+## Technical-Architecure
+The BRS uses React for the frontend and Firebase for backend services including authentication and database management. It is styled with Tailwind CSS and uses Vite as the build system.
+
+## Other-Dependencies
 The following dependencies are used:
-- Firebase
-- React
 - React Firebase hooks
 - React icons
 - React router
-- Tailwind CSS
-- Vite
 
 
-## Contributors
-Parnia Zare  
-Carole Youssef  
-Arathi Vallipuranathan  
-Micah Pascua  
-Lingyun Du  
+
+
 
 
 
