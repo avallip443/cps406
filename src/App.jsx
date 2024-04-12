@@ -14,15 +14,7 @@ function App() {
     <>
       <div
         style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          hiehgt: '100%',
-          backgroundImage: `url(${'./background2.jpg'})`,
-          backgroundSize: 'cover',
-          zIndex: -1,
-          backgroundColor: "#d0cad0"
+          backgroundColor: "#f8f3ea"
         }}
       >
 

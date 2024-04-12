@@ -8,18 +8,29 @@ const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
 
   return (
-    <>
-    
-    <Image
-        src = "bug.png" 
-        boxSize='150px'
-        objectFit='scale-down'
+    <Box
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        hiehgt: "100%",
+        backgroundImage: `url(${"./background2.jpg"})`,
+        backgroundSize: "cover",
+        zIndex: -1,
+        backgroundColor: "#d0cad0",
+      }}
+    >
+      <Image
+        src="bug.png"
+        boxSize="150px"
+        objectFit="scale-down"
         transform="rotate(127deg)"
         position="fixed"
-        top="20px" 
-        left="20px" 
-        zIndex="999" >
-    </Image>
+        top="20px"
+        left="20px"
+        zIndex="999"
+      ></Image>
 
       <Center>
         <Box
@@ -69,7 +80,7 @@ const AuthForm = () => {
           </Flex>
         </Box>
       </Center>
-    </>
+    </Box>
   );
 };
 
