@@ -130,10 +130,14 @@ The BRS uses React for the frontend and Firebase for backend services including 
 
 ## Other-Dependencies
 The following dependencies are used:
+- Chakra UI
+- Firebase
+- React
+- React ChartJS
 - React Firebase hooks
 - React icons
 - React router
-
+- Vite
 
 
 
