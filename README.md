@@ -2,6 +2,8 @@
 
 ## Table of Contents
 - [Overview](#overview)
+- Prerequisites(#prerequisites)
+- Instructions(#Instructions)
 - [Package Contents](#package-contents)
 - [Contributors](#contributors)
 
@@ -11,7 +13,43 @@
 This program, the Bug Report System (BRS), is designed to facilitate the input of bugs and errors into a database, offering users a straightforward and user-friendly script for seamless implementation. A stable internet connection and specific network capabilities are required for optimal functionality of the web form. Users can initiate new bug reports and close them as needed, with email notifications provided at each stage of the bug repair process. Access to the bug report form requires logging in with a valid username and password. Additionally, a graphical representation of past bug occurrences and their frequency will be available. Upon bug resolution, notifications will be sent via email to the reporting developer and any other involved parties.
 
 This package encapsulates the key components of the second iteration of the BRS development cycle, including a Product Backlog, a Test Plan, and a Team Velocity.
+## Prerequisites
 
+Before you begin, ensure you have met the following requirements:
+* You have installed the latest version of [Node.js](https://nodejs.org/).
+* You have a `<Windows/Linux/Mac>` machine. This project may not work as intended on other operating systems.
+  
+## Instructions
+To install this project, follow these steps:
+
+1. **Install Node.js**
+
+   Node.js is required to run this project. Download and install it from [here](https://nodejs.org/).
+
+2. **Install npm**
+
+   npm is distributed with Node.js, which means that when you download Node.js, you automatically get npm installed on your computer. Verify the installation of Node.js and npm with:
+
+   ```bash
+   node -v
+   npm -v
+   
+3.  **Install vite**
+   This project uses Vite for its build system. You can install Vite globally using npm:
+   npm install -g vite
+
+4. **Clone the repository**
+   Use the following git command to clone the project:
+   git clone [https://github.com/your/repository](https://github.com/avallip443/cps406.git)
+   
+5. **Navigate to the project directory**
+6. **Install project dependencies**
+   Run the following command to install the necessary dependencies:
+   npm install
+7. **Start the development server**
+    To start the local development server which will build the app and serve it at  http://localhost:5173/ by default, you can run:
+    npm run dev
+    After running the development server, you should see a message indicating it's running and listing the local URL to access it.
 
 ## Package Contents:
 
