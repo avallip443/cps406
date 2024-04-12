@@ -29,6 +29,9 @@ const BugReports = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedReport, setSelectedReport] = useState("");
   const [showSubscribeModal, setShowSubscribeModal] = useState(false);
+  const [showDescriptionModal, setShowDescriptionModal] = useState(false);
+  const [description, setDescription] = useState("");
+
   const showToast = useShowToast();
 
   const handleEditClick = (report) => {
@@ -46,8 +49,13 @@ const BugReports = () => {
   };
 
   const handleSubscribe = () => {
-    showToast('Success', 'Subscribed to bug', 'success')
+    showToast("Success", "Subscribed to bug", "success");
     setShowSubscribeModal(false);
+  };
+
+  const handleDescriptionClick = (description) => {
+    setDescription(description);
+    setShowDescriptionModal(true);
   };
 
   return (
@@ -59,7 +67,7 @@ const BugReports = () => {
           <>
             <Table variant={"striped"} colorScheme="white" size={"md"}>
               <Thead text>
-                <Tr bgColor={'gray.200'}>
+                <Tr bgColor={"gray.200"}>
                   <Th color={"black"} textAlign={"center"} border={"1px solid"}>
                     Bug Name
                   </Th>
@@ -90,14 +98,32 @@ const BugReports = () => {
                     _odd={{ bg: "pink.100" }}
                     _even={{ bg: "white" }}
                   >
-                    <Td textAlign={"center"} border={"1px solid"}>{report.bugName}</Td>
-                    <Td>{report.bugDescription}</Td>
-                    <Td textAlign={"center"} border={"1px solid"}>{report.priorityLevel}</Td>
-                    <Td textAlign={"center"} border={"1px solid"}>{report.bugStatus}</Td>
+                    <Td textAlign={"center"} border={"1px solid"}>
+                      {report.bugName}
+                    </Td>
+                    <Td>
+                      <Button
+                        variant="link"
+                        onClick={() =>
+                          handleDescriptionClick(report.bugDescription)
+                        }
+                        color={'blue.700'}
+                      >
+                        Click to view report
+                      </Button>
+                    </Td>
+                    <Td textAlign={"center"} border={"1px solid"}>
+                      {report.priorityLevel}
+                    </Td>
+                    <Td textAlign={"center"} border={"1px solid"}>
+                      {report.bugStatus}
+                    </Td>
                     <Td textAlign={"center"} border={"1px solid"}>
                       {new Date(report.createdAt).toLocaleString()}
                     </Td>
-                    <Td textAlign={"center"} border={"1px solid"}>{report.userName}</Td>
+                    <Td textAlign={"center"} border={"1px solid"}>
+                      {report.userName}
+                    </Td>
                     <Td textAlign={"center"} border={"1px solid"}>
                       {authUser && authUser.fullname === report.userName && (
                         <EditIcon
@@ -123,7 +149,10 @@ const BugReports = () => {
               updateReports={updateReports}
             />
 
-            <Modal isOpen={showSubscribeModal} onClose={() => setShowSubscribeModal(false)}>
+            <Modal
+              isOpen={showSubscribeModal}
+              onClose={() => setShowSubscribeModal(false)}
+            >
               <ModalOverlay />
               <ModalContent>
                 <ModalHeader>Subscribe for updates</ModalHeader>
@@ -133,6 +162,20 @@ const BugReports = () => {
                   <Button onClick={handleSubscribe} colorScheme="blue" mt={4}>
                     Subscribe
                   </Button>
+                </ModalBody>
+              </ModalContent>
+            </Modal>
+
+            <Modal
+              isOpen={showDescriptionModal}
+              onClose={() => setShowDescriptionModal(false)}
+            >
+              <ModalOverlay />
+              <ModalContent>
+                <ModalHeader>Bug Description</ModalHeader>
+                <ModalCloseButton />
+                <ModalBody mb={5}>
+                  <p>{description}</p>
                 </ModalBody>
               </ModalContent>
             </Modal>

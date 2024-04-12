@@ -36,20 +36,31 @@ const Sidebar = () => {
       px={{ base: 2, md: 4 }}
     >
       <Flex direction={"column"} gap={5} w="full" height={"full"}>
-        <Link
-          to={"/"}
-          as={RouterLink}
-          display={{ base: "none", md: "block" }}
-          pl={2}
-          cursor="pointer"
+        <Box
+          bg="pink.100"
+          w="150px"
+          h="150px"
+          borderRadius="50%"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          mb={8}
         >
-          <Image
-            src={"bug.png"}
-            boxSize={"150px"}
-            objectFit={"scale-down"}
-            transform={"rotate(127deg)"}
-          />
-        </Link>
+          <Link
+            to={"/"}
+            as={RouterLink}
+            display={{ base: "none", md: "block" }}
+            pl={2}
+            cursor="pointer"
+          >
+            <Image
+              src={"bug.png"}
+              boxSize={"150px"}
+              objectFit={"scale-down"}
+              transform={"rotate(127deg)"}
+            />
+          </Link>
+        </Box>
 
         {/*All page buttons*/}
         <Flex
@@ -68,10 +79,7 @@ const Sidebar = () => {
             cursor="pointer"
             _hover={{ textDecoration: "none" }}
           >
-            <Button
-              display={{ base: "none", md: "block" }}
-              variant="solid"
-            >
+            <Button display={{ base: "none", md: "block" }} variant="solid">
               Home
             </Button>
           </Link>
@@ -83,10 +91,7 @@ const Sidebar = () => {
             cursor="pointer"
             _hover={{ textDecoration: "none" }}
           >
-            <Button
-              display={{ base: "none", md: "block" }}
-              variant="solid"
-            >
+            <Button display={{ base: "none", md: "block" }} variant="solid">
               Statistics
             </Button>
           </Link>
@@ -98,10 +103,7 @@ const Sidebar = () => {
             cursor="pointer"
             _hover={{ textDecoration: "none" }}
           >
-            <Button
-              display={{ base: "none", md: "block" }}
-              variant="solid"
-            >
+            <Button display={{ base: "none", md: "block" }} variant="solid">
               Bugs
             </Button>
           </Link>

@@ -69,6 +69,7 @@ const HomePage = () => {
                     border={"1px solid black"}
                     color={"black"}
                     fontSize={20}
+                    _hover={{ bgColor: "pink.200" }}
                   >
                     View Reports
                   </Text>
@@ -89,6 +90,7 @@ const HomePage = () => {
                     border={"1px solid black"}
                     color={"black"}
                     fontSize={20}
+                    _hover={{ bgColor: "pink.200" }}
                   >
                     Make a Report
                   </Text>
