@@ -36,20 +36,24 @@ To install this project, follow these steps:
    
 3.  **Install vite**
    This project uses Vite for its build system. You can install Vite globally using npm:
-   npm install -g vite
+      ```bash
+      npm install -g vite
 
-4. **Clone the repository**
+5. **Clone the repository**
    Use the following git command to clone the project:
+    ```bash
    git clone [https://github.com/your/repository](https://github.com/avallip443/cps406.git)
    
-5. **Navigate to the project directory**
-6. **Install project dependencies**
+7. **Navigate to the project directory**
+8. **Install project dependencies**
    Run the following command to install the necessary dependencies:
-   npm install
-7. **Start the development server**
+    ```bash
+    npm install
+10. **Start the development server**
     To start the local development server which will build the app and serve it at  http://localhost:5173/ by default, you can run:
-    npm run dev
-    After running the development server, you should see a message indicating it's running and listing the local URL to access it.
+      ```bash
+     npm run dev
+  After running the development server, you should see a message indicating it's running and listing the local URL to access it.
 
 ## Package Contents:
 
