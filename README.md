@@ -2,8 +2,8 @@
 
 ## Table of Contents
 - [Overview](#overview)
-- Prerequisites(#prerequisites)
-- Instructions(#Instructions)
+- [Prerequisites](#prerequisites)
+- [Instructions](#Instructions)
 - [Package Contents](#package-contents)
 - [Contributors](#contributors)
 
