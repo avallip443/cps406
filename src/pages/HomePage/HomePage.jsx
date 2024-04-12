@@ -57,6 +57,7 @@ const HomePage = () => {
 
         
         <h2 style={{
+           marginRight: '60px',
           color: '#0B1957',
           backgroundColor: '#F8F3EA',
           fontSize: '32px',
@@ -71,6 +72,7 @@ const HomePage = () => {
         }}>About Us</h2>
 
         <p style={{
+          marginRight: '60px',
           color: '#0B1957',
           maxWidth: '600px',
           backgroundColor: '#F8F3EA',
