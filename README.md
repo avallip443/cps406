@@ -12,11 +12,11 @@
   
 
 ## Contributors
-Parnia Zare  
-Carole Youssef  
 Arathi Vallipuranathan  
-Micah Pascua  
+Carole Youssef  
 Lingyun Du  
+Micah Pascua  
+Parnia Zare  
 
 ## Overview
 
