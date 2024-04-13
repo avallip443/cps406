@@ -16,7 +16,7 @@ const BugsPage = () => {
             justifyContent={"center"}
             alignItems={"center"}
           >
-            <Box bgColor={"pink.200"} py={4} borderRadius={16}>
+            <Box bgColor={"pink.200"} py={4} borderRadius={16} mb={5}>
               <BugReports />
             </Box>
           </Flex>
